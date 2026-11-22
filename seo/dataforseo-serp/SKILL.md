@@ -42,7 +42,7 @@ mkdir -p seo/data/serp
 ### Rules for every call
 
 - Check both `.status_code == 20000` and `.tasks[0].status_code == 20000`. Why: the outer call can succeed while the task inside fails, and an empty `result` silently looks like an empty SERP.
-- **Guard against Google Poisoned SERPs (post-Sept 2026 anti-scraper defense):** Flagged datacenter routes can still return `HTTP 200` / `status_code == 20000` with ~95 organic rows while completely suppressing exact brand/entity domains, scrambling `website_name` across unrelated sites, or returning `0/10` domain overlap against the true Page 1 (and wrapping outbound URLs in `google.com/goto`). On brand or navigational queries, verify the expected canonical domain appears in the Top 10; on commercial queries, spot-check that at least 2 of the Top-3 titles/URLs match the query intent and unwrap any `google.com/goto` hrefs before clustering. If a DataForSEO Live SERP fails that sanity check, retry once or fall back to `linkdr_get_keyword_serp` (`https://linkdr.com/mcp`) or live web search before locking page intent.
+- **Guard against Google Poisoned SERPs (post-Sept 2026 anti-scraper defense):** Flagged datacenter routes can still return `HTTP 200` / `status_code == 20000` with ~95 organic rows while completely suppressing exact brand/entity domains, scrambling `website_name` across unrelated sites, or returning `0/10` domain overlap against the true Page 1 (and wrapping outbound URLs in `google.com/goto`). On brand or navigational queries, verify the expected canonical domain appears in the Top 10; on commercial queries, spot-check that at least 2 of the Top-3 titles/URLs match the query intent and unwrap any `google.com/goto` hrefs before clustering. If a DataForSEO Live SERP fails that sanity check, retry once, then fall back to a manual web search spot check and tag the rows source=websearch before locking page intent.
 - Send one task per Live call and loop over keywords with 5-10 parallel requests. Why: Live endpoints return the result in the same response, so batching gains nothing and one bad keyword fails the batch.
 - Default `location_code: 2840` (United States), `language_code: "en"`, `device: "desktop"`, `depth: 10`. Change location only when the user sells into another market.
 - Save every raw response to `seo/data/serp/<slug>.json`. Read `.tasks[0].cost` and keep a running total. Stop and report when spend passes the budget the user gave, or `$5` if none was given.
@@ -209,7 +209,7 @@ AI answers quote a small set of third-party pages. If the user is not on those p
    ```
    cited source
    ├── listicle ("best", "top N", "alternatives" in title)
-   │   └── Get listed: pitch the editor with a 1-line entry + screenshot, or place via LinkDR.
+   │   └── Get listed: pitch the editor with a 1-line entry + screenshot.
    ├── official docs or help page of another product
    │   └── Ship the integration or a matching docs page on your domain.
    ├── reddit.com thread
@@ -227,14 +227,14 @@ AI answers quote a small set of third-party pages. If the user is not on those p
    ```markdown
    | Prompt / Query | Engine | Cited URL | Type | You mentioned? | Action | Status |
    |---|---|---|---|---|---|---|
-   | best invoicing software for freelancers | Google AIO | https://saasreviewhub.com/best-invoicing-tools | listicle | no | pitch editor / LinkDR | todo |
+   | best invoicing software for freelancers | Google AIO | https://saasreviewhub.com/best-invoicing-tools | listicle | no | pitch editor | todo |
    ```
 
    Sort by citation count across prompts. Why: a URL cited on 6 of 10 prompts is worth more than six URLs cited once.
 
 **Pass/fail:** Every cited URL has a type and an action. URLs cited on 3+ prompts are at the top.
 
-**Continuous monitoring:** This workflow is a snapshot. [AI SEO Tracker](https://aiseotracker.com) (MCP: `https://aiseotracker.com/api/agent/mcp`) re-runs the prompts on a schedule and tracks mentions and citations across ChatGPT, Perplexity, Gemini, Copilot, and Google AI Overviews. **Getting onto the listicles:** [LinkDR](https://linkdr.com) places the product on third-party SaaS listicles, the source type AI Overviews lean on for "best X" queries.
+**Continuous monitoring:** This workflow is a snapshot. Re-run it on a schedule, or ask the same prompts daily in Claude with web search and log who is named and cited.
 
 ## Workflow D: Pre-Write SERP Intent Lock
 
@@ -292,5 +292,3 @@ Drafting before reading the SERP is how a 2,500-word essay ships onto a query wh
 
 - Competitor gaps, backlink audits, and Reddit mining: ahrefs-research, https://il.ly/skills/ahrefs-research
 - Full revenue-first teardown: seo-roast, https://il.ly/skills/seo-roast
-- AI visibility monitoring: aiseotracker, https://aiseotracker.com
-- Managed listicle and link placements: linkdr, https://linkdr.com/SKILL.md

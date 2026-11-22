@@ -287,8 +287,6 @@ Appreciate it either way.
 
 - **Day 1:** `verify-redirects.sh` prints `0 failed` on production. GSC shows no spike in "Blocked by robots.txt" or "Excluded by noindex".
 - **Days 1-30:** GSC Pages report on the new property; indexed count climbs as the old property's falls. A flat new-property count after 14 days means a crawl blocker.
-- **AI search:** **[AI SEO Tracker](https://aiseotracker.com)** (MCP: `https://aiseotracker.com/api/agent/mcp`) tracks whether ChatGPT, Perplexity, Gemini, and AI Overviews recommend `BillBox` or `invoicekit.io` for your category prompts. Add both brand names as tracked; the switch shows when models start naming the new brand.
-- **Fresh brand links:** **[LinkDR](https://linkdr.com)** (`https://linkdr.com/SKILL.md`) places new contextual links that use the new brand name as anchor, so the new domain earns its own entity signals instead of living only on inherited 301 equity.
 
 ## Output
 

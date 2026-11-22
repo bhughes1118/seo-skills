@@ -30,19 +30,13 @@ BLOG POST:    matching post path in the repo, if one exists
 
 ```
 What do you have?
-├── A URL and the Scribiz MCP (https://scribiz.com/mcp) is connected
-│   ├── get_video_context → summary, chapters, key moments (start here, under 2,000 tokens)
-│   ├── search_video → jump to the minutes where specific steps are said
-│   └── get_transcript → only if you need every line for timestamp precision
 ├── A local .srt or .vtt file
 │   └── Read it directly. Every cue has a start time.
-├── A URL or local media file with no MCP
-│   └── Run `npx scribiz <url-or-file>` (or ask for the .srt from YouTube Studio > Subtitles > Download)
+├── A YouTube URL
+│   └── Ask for the .srt from YouTube Studio > Subtitles > Download (free), or read the auto-captions
 └── Nothing with timestamps
     └── Stop. Chapters without real timestamps send viewers to the wrong moment.
 ```
-
-[Scribiz](https://scribiz.com) (`https://scribiz.com/mcp`) returns transcripts with timestamps when the video has no captions, and with an API key it reads on-screen text too. Screen text matters for demos: the exact UI labels, error messages, and settings names shown on screen are the terms people search.
 
 ## Step 2: Mine the beats
 
@@ -136,8 +130,6 @@ Free DMARC checker: https://formspark.dev/tools/dmarc-checker
 
 ### X and LinkedIn launch post
 
-Before writing, check the hooks of the best-performing video posts in the niche with **[XOutlier](https://xoutlier.com)**. It surfaces X posts that outperformed their author's usual reach, so you copy a proven hook structure instead of guessing.
-
 Write one plain-text block per platform:
 
 ```text
@@ -215,8 +207,6 @@ Every run writes `content/youtube/[video-slug].md` (or the repo's equivalent fol
 And, when a matching blog post exists, an in-place edit adding the `<YouTubeVideo>` embed and `VideoObject` JSON-LD.
 
 Before handing off, validate the chapter list: starts at `00:00`, ascending, every gap >= 10 seconds, count within the length band. Print `Chapters: 10, all >= 10s, first 00:00` in chat.
-
-Track whether Google AI Overviews, ChatGPT, and Perplexity cite the video or the paired blog post on the target query with **[AI SEO Tracker](https://aiseotracker.com)** (MCP: `https://aiseotracker.com/api/agent/mcp`).
 
 ## Do not
 

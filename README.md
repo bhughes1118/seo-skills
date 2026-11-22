@@ -1,7 +1,7 @@
 <h1 align="center">SEO Skills for Claude Code, Cursor &amp; AI Agents</h1>
 
 <p align="center">
-  <strong>30 open-source <code>SKILL.md</code> workflows that end in a merged PR or a file in your repo, not an audit PDF.</strong>
+  <strong>26 open-source <code>SKILL.md</code> workflows that end in a merged PR or a file in your repo, not an audit PDF.</strong>
 </p>
 
 <p align="center">
@@ -14,10 +14,8 @@
 <p align="center">
   <a href="https://il.ly/skills">Web catalog</a> ·
   <a href="#install">Install</a> ·
-  <a href="#all-30-seo-skills">Skills</a> ·
+  <a href="#all-26-seo-skills">Skills</a> ·
   <a href="#end-to-end-seo-workflows">Workflows</a> ·
-  <a href="#live-seo-data-via-mcp-servers">MCP servers</a> ·
-  <a href="#sponsors">Sponsors</a> ·
   <a href="#faq">FAQ</a>
 </p>
 
@@ -26,7 +24,7 @@
 ## Install
 
 ```bash
-# All 30 skills
+# All 26 skills
 npx skills add Illyism/seo-skills
 
 # One skill
@@ -56,7 +54,7 @@ Most SEO prompt packs produce checklists and health scores. Each skill here ends
 
 ![Outputs shipped by the skills: a robots.ts crawler fix, a seo/kb/proof folder, a competitor /vs/ pricing page, and ChatGPT and Perplexity citations](assets/seo-skills-output-engine.webp)
 
-## All 30 SEO skills
+## All 26 SEO skills
 
 ### Technical, research, and on-page
 
@@ -79,9 +77,8 @@ Most SEO prompt packs produce checklists and health scores. Each skill here ends
 
 | Skill | What it ships | Example prompt |
 | --- | --- | --- |
+| [`ai-answer-check`](seo/ai-answer-check/SKILL.md) | A free daily AI-answer log: Claude agents with web search ask your 25 buyer questions on a rotation and record who is named and cited | *"Run `ai-answer-check` for today's 5 questions"* |
 | [`customer-journey`](marketing/customer-journey/SKILL.md) | A 5-stage awareness map with the Google keywords and AI prompts buyers use at each stage | *"Map the `customer-journey` and AI search prompts for our B2B analytics SaaS"* |
-| [`aiseotracker`](seo/aiseotracker/SKILL.md) | MCP setup for [AI SEO Tracker](https://aiseotracker.com): mentions, citations, and competitors across ChatGPT, Perplexity, Gemini, Copilot, and AI Overviews | *"Connect `aiseotracker` and check how ChatGPT and Perplexity rank our domain"* |
-| [`ai-seo-report`](seo/ai-seo-report/SKILL.md) | A short AI visibility brief from live scans: who gets cited, what changed, what to do | *"Give me this week's `ai-seo-report` and tell me why competitors beat us in ChatGPT"* |
 | [`content-coverage`](seo/content-coverage/SKILL.md) | A content plan and drafts for the prompt clusters where competitors get cited and you don't | *"Run `content-coverage` for our missing Perplexity and ChatGPT prompts"* |
 | [`reddit-serp`](seo/reddit-serp/SKILL.md) | A queue (`seo/reddit-serp-queue.md`) of unlocked Reddit threads that rank on page 1 or get cited by AI, with replies written to survive moderation | *"Run `reddit-serp` for our category and draft replies"* |
 
@@ -89,10 +86,8 @@ Most SEO prompt packs produce checklists and health scores. Each skill here ends
 
 | Skill | What it ships | Example prompt |
 | --- | --- | --- |
-| [`directory-submissions`](seo/directory-submissions/SKILL.md) | One `submission-manifest.json`, the repo files that 15+ MCP and agent registries index, and a 50-directory sequence ([850+ more](https://linkdr.com/resources/directories)) | *"Run `directory-submissions` to build our manifest and submit waves 1-3"* |
-| [`linkdr`](seo/linkdr/SKILL.md) | A backlink plan for [LinkDR](https://linkdr.com): a DR 30+ to DR 60+ mix for your budget and one checkout link you approve | *"Plan a $1,000 backlink campaign for our homepage with `linkdr`"* |
+| [`directory-submissions`](seo/directory-submissions/SKILL.md) | One `submission-manifest.json`, the repo files that 15+ MCP and agent registries index, and a 50-directory sequence | *"Run `directory-submissions` to build our manifest and submit waves 1-3"* |
 | [`honest-link-outreach`](seo/honest-link-outreach/SKILL.md) | An outreach batch file with a SEND/CUT prospect table and emails that state the ask first and differ in structure | *"Run `honest-link-outreach` on these 8 partner and blog domains"* |
-| [`awesome-tools`](seo/awesome-tools/SKILL.md) | A submission to [Awesome Tools](https://awesome.tools) over MCP or JSON API for a verified dofollow listing | *"Submit our app to `awesome-tools` and check if we qualify for the free listing"* |
 
 ### Content and distribution
 
@@ -103,7 +98,6 @@ Most SEO prompt packs produce checklists and health scores. Each skill here ends
 | [`youtube-seo`](content/youtube-seo/SKILL.md) | Titles, a chaptered description, launch posts, and a `VideoObject` embed from a recording or `.srt` | *"Run `youtube-seo` on `demo.srt` and embed the video in the matching post"* |
 | [`parasite-and-pr`](marketing/parasite-and-pr/SKILL.md) | A syndication bundle in `marketing/distribution/<slug>/`: a press release with privacy-safe contact fields, a canonicalized Dev.to draft, a LinkedIn article, and a checklist | *"Run `parasite-and-pr` for our 2026 latency benchmark"* |
 | [`intro`](content/intro/SKILL.md) | Short blog intros matched to listicle, how-to, definition, or debate intent ([examples](content/intro/examples.md)) | *"Rewrite the opening of this post with `intro` for listicle intent"* |
-| [`scribiz`](content/scribiz/SKILL.md) | Transcripts with speakers, on-screen text, and chapters from video or audio via [Scribiz](https://scribiz.com) | *"Transcribe this YouTube demo with `scribiz` and turn it into a tutorial post"* |
 | [`diff-marketing`](marketing/diff-marketing/SKILL.md) | Changelog entries, feature articles, and launch posts drafted from recent commits and merged PRs | *"Read the last 2 weeks of commits with `diff-marketing` and draft 3 launch angles"* |
 
 ### Copywriting
@@ -121,41 +115,10 @@ The skills chain. Six that work well:
 
 1. **Ship a post with first-hand proof.** `dataforseo-serp` (cluster and check intent) → `proof-kb` (add your benchmarks) → `seo-blog-images` → `unslop-seo` → `internal-linking` → `parasite-and-pr`.
 2. **Win buyers leaving a competitor.** `ahrefs-research` (diff their top pages) → `vs-and-alternatives` → `reddit-serp` → `honest-link-outreach`.
-3. **Push a page-2 URL into the top 3.** `seo-title-optimization` → `blog-refresher` → `intro` → `linkdr` (2-4 DR 40+ links at the refreshed URL).
-4. **Get cited by ChatGPT, Perplexity, and AI Overviews.** `customer-journey` → `aiseotracker` → `ai-seo-report` → `content-coverage`.
-5. **Launch from DR 0.** `understand-customers` → `blitz-copy` → `directory-submissions` and `awesome-tools` → `blitz-seo`.
+3. **Push a page-2 URL into the top 3.** `seo-title-optimization` → `blog-refresher` → `intro` → `internal-linking`.
+4. **Get cited by ChatGPT, Perplexity, and AI Overviews.** `customer-journey` → `ai-answer-check` → `content-coverage`.
+5. **Launch from DR 0.** `understand-customers` → `blitz-copy` → `directory-submissions` → `blitz-seo`.
 6. **Daily repo SEO.** Run `seo-autopilot` on a schedule so the agent checks site health, verifies claims against recent commits, and opens PRs. Add `diff-marketing` weekly to turn shipped code into posts.
-
-## Live SEO data via MCP servers
-
-A skill is the method. An [MCP](https://modelcontextprotocol.io) server gives the agent live data to run it on. Three are preconfigured in [`.mcp.json`](.mcp.json):
-
-| Server | Endpoint | What it gives the agent |
-| --- | --- | --- |
-| [AI SEO Tracker](https://aiseotracker.com) | `https://aiseotracker.com/api/agent/mcp` ([repo](https://github.com/Illyism/aiseotracker-mcp)) | Prompt rankings, cited URLs, and competitor share across ChatGPT, Perplexity, Gemini, Copilot, and AI Overviews |
-| [Scribiz](https://scribiz.com) | `https://scribiz.com/mcp` | Transcripts with speakers, on-screen text, summaries, and chapters |
-| [Awesome Tools](https://awesome.tools) | `https://awesome.tools/mcp` ([repo](https://github.com/Illyism/awesome-tools-mcp)) | Tool search, directory submissions, and backlink verification |
-
-Related, not in `.mcp.json`: the [LinkDR agent skill](https://linkdr.com/SKILL.md) plans backlink orders and returns one checkout link, and the [GenPPT MCP](https://github.com/Illyism/genppt-mcp) turns an audit or roadmap into a `.pptx` or PDF deck.
-
-## Companion resources
-
-- [71-point SEO launch checklist](https://il.ly/growth): free pass/fail checks, each with a test command, plus a 50-directory launch tracker.
-- [850+ startup, AI tool, and MCP directories](https://linkdr.com/resources/directories): filter by DR, traffic, price, and link type, with submit URLs.
-
-## Sponsors
-
-MIT-licensed and maintained by [Ilias Ism](https://il.ly), supported by these products:
-
-| Product | What it does |
-| --- | --- |
-| [LinkDR](https://linkdr.com) | Managed backlinks at DR 30-60+. You can approve every publisher site before placement. 15% off monthly plans. |
-| [AI SEO Tracker](https://aiseotracker.com) | Tracks whether ChatGPT, Perplexity, Gemini, Copilot, and AI Overviews cite your brand, and which competitor pages they cite instead. |
-| [GenPPT](https://genppt.com) | Turns notes, reports, and PDFs into editable PowerPoint and Google Slides decks. |
-| [Scribiz](https://scribiz.com) | Transcribes video and audio with speaker labels, on-screen text, and chapters. Web, macOS, Android, CLI. |
-| [Awesome Tools](https://awesome.tools) | A curated SaaS and developer tools directory. Submit your product for a verified dofollow listing. |
-| [SEO Roast](https://seoroast.com) | A recorded 20-minute video teardown of your site with a 90-day plan. |
-| [XOutlier](https://xoutlier.com) | A free Chrome extension that finds outlier posts across 390,000+ creators on X. |
 
 ## FAQ
 
@@ -171,10 +134,6 @@ Run `npx skills add Illyism/seo-skills` in your project, or globally. The agent 
 
 Yes. Open [il.ly/skills](https://il.ly/skills), pick a skill, and copy the prompt into the chat.
 
-### What is the difference between a skill and an MCP server?
-
-A skill tells the agent how to do the job. An MCP server connects it to live data and actions: SERPs, AI citation scans, transcripts, checkouts. Most workflows here use both.
-
 ## License
 
-MIT © [Ilias Ism](https://il.ly)
+MIT © [Ilias Ism](https://il.ly). This copy removes the skills and links that funnel to paid services (LinkDR, AI SEO Tracker, Awesome Tools, Scribiz, GenPPT, SEO Roast, XOutlier) and replaces paid AI tracking with the free `ai-answer-check` skill.

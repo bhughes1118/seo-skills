@@ -159,4 +159,3 @@ Edit the files on disk. Never paste a full rewritten draft into chat instead of 
 - **Slop:** removed `X` dashes, `Y` AI-vocabulary terms, `Z` passive or filler clauses. Check script: 0 hits.
 ```
 
-Once the pages are live, add the question headings as prompts in **[AI SEO Tracker](https://aiseotracker.com)** (MCP: `https://aiseotracker.com/api/agent/mcp`) to see which snippets ChatGPT, Perplexity, Gemini, and Google AI Overviews actually quote from the rewritten sections.

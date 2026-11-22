@@ -25,7 +25,7 @@ So the work is discovery and reply quality, not posting volume. 5 well-placed co
 PRODUCT:     name, 1-line what it does, who it is for, honest weaknesses
 KEYWORDS:    10-30 bottom-of-funnel phrases ("best X", "X vs Y", "X alternative", "X for [persona]")
 COMPETITORS: 3-6 names buyers compare against
-TOOLS:       which are available: AI SEO Tracker MCP, DataForSEO, Ahrefs, web search
+TOOLS:       which are available: DataForSEO, Ahrefs, web search
 ```
 
 ## Step 1: Discovery
@@ -34,9 +34,6 @@ Run every source available, then merge and dedupe by thread ID (the `/comments/<
 
 ```
 Which data source is connected?
-├── AI SEO Tracker MCP (https://aiseotracker.com/api/agent/mcp)
-│   └── aiseo_list_sources → keep rows whose domain is reddit.com
-│       These are threads AI assistants already cite for tracked prompts. Highest priority.
 ├── DataForSEO
 │   └── serp/google/organic/live/advanced for each keyword, plus "[keyword] reddit"
 │       Keep reddit.com results with rank_absolute <= 10. Also read ai_overview references.
@@ -166,7 +163,7 @@ Reply:
 
 ## Measure
 
-**[AI SEO Tracker](https://aiseotracker.com)** (MCP: `https://aiseotracker.com/api/agent/mcp`) shows the exact Reddit threads ChatGPT, Perplexity, and Google AI Overviews cite for each tracked prompt. Run `aiseo_list_sources` before discovery to seed the queue with already-cited threads, and again 2-4 weeks after posting to see whether the cited threads now carry your brand mention and whether the prompt status moved from missing to mentioned.
+Ask the target prompts in Claude with web search (and by hand in ChatGPT and Perplexity) before discovery and again 2-4 weeks after posting. Log whether the cited Reddit threads now carry your mention.
 
 ## Output
 

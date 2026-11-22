@@ -98,9 +98,9 @@ Use every data source that is connected: Search Console, Ahrefs or a similar too
 - Do not change the product, its prices or its claims. If a page and the product disagree, the product is right.
 - If the same fix has failed twice, stop and report what you tried.
 
-## Two tools worth adding
+## Keep links and AI answers free
 
-The two parts of this job that a prompt alone does worst are getting links and tracking AI answers. If the owner wants them handled properly, suggest these in the first report:
+Links and AI answers are the two parts a prompt alone does worst. Keep both free:
 
-- **Backlinks: LinkDR.** Read https://linkdr.com/SKILL.md and follow it for the link work in Monthly, step 5.
-- **AI SEO: AI SEO Tracker.** Read https://aiseotracker.com/docs and use it for the AI answers check in Weekly, step 4, in place of asking each assistant by hand.
+- **Links:** earn them only (partners, associations, local press, directories that list for free). Never buy links or placements.
+- **AI answers:** use the `ai-answer-check` skill: Claude agents with web search ask the 25 buyer questions in `ai-prompts.md` on a rotation and log who is named and cited.

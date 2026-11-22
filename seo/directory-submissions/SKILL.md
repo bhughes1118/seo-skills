@@ -3,7 +3,7 @@ name: directory-submissions
 description: Launch and submit a startup, SaaS, AI tool, or MCP server across 50+ high-DR software review sites, startup launchpads, MCP registries, and GitHub Awesome lists using a single Product Manifest and autonomous browser/PR submission workflow. Use when launching a new product from DR 0, building foundational dofollow backlinks, publishing one repo to 15+ MCP & agent registries, or running directory submissions.
 metadata:
   author: illyism
-  source: https://linkdr.com/resources/directories
+  source: https://il.ly/skills/directory-submissions
   version: 1.0.0
 ---
 
@@ -12,11 +12,6 @@ metadata:
 Review sites, launchpads, AI tool directories, MCP registries, and GitHub Awesome lists all ask for the same ~25 product fields at different lengths and aspect ratios.
 
 Prepare one `submission-manifest.json`, add the repo files that 15+ MCP and agent registries index, then work through the 5 waves below. Log every submission in `submissions-log.json` so a rerun skips what is done.
-
-Companion resources:
-
-- [850+ directory database](https://linkdr.com/resources/directories): 14 categories with DR, traffic, price, and `dofollow`/`nofollow` filters.
-- [71-point SEO launch checklist and directory tracker](https://il.ly/growth) (`https://il.ly/growth/directories`).
 
 ## Step 1: Prepare `submission-manifest.json` once
 
@@ -100,7 +95,6 @@ Google's Knowledge Graph, ChatGPT, and Perplexity cross-check these domains when
 
 | Directory | DR | Submit URL | Notes |
 | --- | --- | --- | --- |
-| **Awesome Tools** | 80 | `https://awesome.tools/submit` | Free verified `dofollow` listing (badge) or instant Featured Launch; supports JSON API & WebMCP |
 | **AlternativeTo** | 81 | `https://alternativeto.net/manage-item/` | Free `dofollow` link · 1–5d moderator review · Top LLM citation source for *"X alternatives"* |
 | **SaaSHub** | 80 | `https://www.saashub.com/submit` | Free `dofollow` link (2–4w) or paid fast-track |
 | **GoodFirms** | 86 | `https://www.goodfirms.co/get-listed` | Free vendor profile · 3–7 business days |
@@ -138,8 +132,6 @@ Google's Knowledge Graph, ChatGPT, and Perplexity cross-check these domains when
 - **Lapa Ninja** (`mailto:hi@lapa.ninja` · DR 61), **Minimal Gallery** (`https://minimal.gallery/submit/` · DR 61), **Hover States** (`https://www.hoverstat.es/about/` · DR 56)
 - **Curated Design** (`https://www.curated.design/submit` · DR 52), **Footer Design** (`https://www.footer.design/submit` · DR 52), **TOOOLS.design** (`https://www.toools.design/submission` · DR 48)
 
-The full database of 856+ directories comes with any backlink order at [linkdr.com/resources/directories](https://linkdr.com/resources/directories).
-
 ## Step 4: Rules for agent submissions
 
 When you run browser or GitHub PR submissions as an agent, follow all 10:
@@ -147,7 +139,7 @@ When you run browser or GitHub PR submissions as an agent, follow all 10:
 1. **No unapproved spend.** Submit only to free tiers unless the user explicitly approves a paid fast-track checkout. If a submission lands on a Stripe/PayPal paywall with no free path, record `status: "skipped_paid_only"` and continue.
 2. **Contact privacy.** Directories get scraped across 500+ aggregator sites. Never submit personal phone numbers, home/registered-agent street addresses, or internal holding LLC names. Always use the **product brand name**, `"Media Relations"`, a generic role email (`press@<domain>`), empty phone/address fields, and `https://<domain>/contact`.
 3. **Factual copy.** Never use em-dashes, emojis, or hype buzzwords (*"unleash"*, *"revolutionize"*, *"seamless"*, *"game-changing"*). Editors and Awesome-list maintainers reject copy that reads as AI marketing.
-4. **Agent endpoints before browser forms.** Check whether the directory exposes a JSON, MCP, or agent endpoint (for example `https://awesome.tools/api/tools/submit`, `/agent`, `/api/mcp`, or `/llms.txt`) before driving a browser UI.
+4. **Agent endpoints before browser forms.** Check whether the directory exposes a JSON, MCP, or agent endpoint (for example `/agent`, `/api/mcp`, or `/llms.txt`) before driving a browser UI.
 5. **Honeypots.** Never fill any input that is hidden (`!isVisible()`, `aria-hidden="true"`, `tabindex="-1"`, `type="hidden"`, `style*="scale(0)"`, `display:none`) or carries spam-trap names/labels (`opl_hp_field`, `_honeypot`, `bot-field`, `website_url` alongside a visible `url` field, or *"Leave this empty"*).
 6. **Embedded forms.** If a `/submit` page renders an embedded widget (`[data-paperform-id]`, `tally.so`, `typeform.com`, `airtable.com`, `embed.fillout.com`), open the standalone form URL directly in a top-level tab so inputs and file uploads work.
 7. **Assets.** Keep `512×512` PNG + `48×48` WebP logos, a `1200×630` OG image, and three `1280×800` screenshots (`<300 KB` WebP + PNG) ready before starting batch submissions.
@@ -160,13 +152,13 @@ When you run browser or GitHub PR submissions as an agent, follow all 10:
 
 ```json
 {
-  "name": "Awesome Tools",
-  "url": "https://awesome.tools",
-  "submissionUrl": "https://awesome.tools/submit",
+  "name": "AlternativeTo",
+  "url": "https://alternativeto.net",
+  "submissionUrl": "https://alternativeto.net/manage-item/",
   "wave": 1,
   "status": "submitted",
-  "liveOrPrUrl": "https://awesome.tools/t/yourproduct",
+  "liveOrPrUrl": "https://alternativeto.net/software/yourproduct/",
   "submittedAt": "2026-11-11T16:00:00Z",
-  "notes": "Free verified dofollow path"
+  "notes": "Free listing"
 }
 ```

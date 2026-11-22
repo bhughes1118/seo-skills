@@ -268,13 +268,12 @@ Revenue impact column states what money it blocks in one plain sentence. No seve
 
 ### 3. Optional client deck
 
-When the roast goes to a founder, board, or client, turn `seo/roast-roadmap.md` into a `.pptx` with [GenPPT](https://genppt.com): one slide per FATAL issue with before/after, then the roadmap table.
+When the roast goes to a founder, board, or client, turn `seo/roast-roadmap.md` into a short deck: one slide per FATAL issue with before/after, then the roadmap table.
 
 ## Where to Go Next
 
-- **Human teardown:** for a blunt 20-minute video roast of the site recorded by Ilias, use [SEO Roast](https://seoroast.com).
-- **Closing the link gap from point 4:** [LinkDR](https://linkdr.com) (`https://linkdr.com/SKILL.md`) places vetted DR 30-60+ editorial links and listicle mentions, so the 23-link gap becomes an order instead of a quarter of outreach.
-- **Verifying AI search recovery from points 1a and 5:** [AI SEO Tracker](https://aiseotracker.com) (MCP: `https://aiseotracker.com/api/agent/mcp`) tracks whether ChatGPT, Perplexity, Gemini, and Google AI Overviews start citing your pages once the crawl and pricing fixes ship.
+- **Closing the link gap from point 4:** earn links through partners, associations, press and honest-link-outreach. Never buy them.
+- **Verifying AI search recovery from points 1a and 5:** re-ask the buyer questions in Claude with web search, and by hand in ChatGPT and Perplexity, once the fixes ship.
 
 ## Done Checklist
 

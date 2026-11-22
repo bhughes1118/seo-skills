@@ -211,8 +211,8 @@ Every run ends with:
 
 ## Track and amplify
 
-- **[AI SEO Tracker](https://aiseotracker.com)** (MCP: `https://aiseotracker.com/api/agent/mcp`): add `[You] vs [X]`, `[X] alternative`, and every `Best [Category] for [Persona]` phrase as tracked prompts to see when ChatGPT, Perplexity, and Gemini start citing the new pages and which third-party lists they cite instead.
-- **[LinkDR](https://linkdr.com)** (`https://linkdr.com/SKILL.md`): get your product placed on the independent "[X] alternatives" listicles that AI answers already cite. Your own `/[x]-alternative` page is one source; being listed on 5 independent ones is what makes a model recommend you by default.
+- Re-ask the target prompts (`[You] vs [X]`, `[X] alternative`, `Best [Category] for [Persona]`) in Claude with web search, and by hand in ChatGPT and Perplexity, 2-4 weeks after shipping. Log who is named and which pages are cited.
+- Earn mentions on the independent lists AI answers cite by pitching their editors with sourced facts. Never pay for placements.
 
 ## Do not
 

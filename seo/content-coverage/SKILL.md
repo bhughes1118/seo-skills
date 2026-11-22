@@ -1,76 +1,39 @@
 ---
 name: content-coverage
-description: >-
-  Plan and write blog posts that cover missing AI search prompts from live MCP
-  data. Use when the user wants content for ChatGPT gaps, citation listicles,
-  competitor sources, or a content campaign from AI SEO Tracker. Trigger on
-  "write posts for missing prompts", "content coverage", "what should we
-  publish", or fetch https://aiseotracker.com/content-coverage/SKILL.md.
-version: 1.0.0
-homepage: https://aiseotracker.com/content-coverage/SKILL.md
+description: Plan and write pages that cover the buyer questions where AI answers name competitors and not you, using the free ai-answer-check log. Use when the user wants content for AI-answer gaps, cited listicles, competitor sources, or asks "what should we publish" for ChatGPT, Perplexity or AI Overviews.
 metadata:
-  version: 1.0.0
-  author: illyism
-  source: https://aiseotracker.com/content-coverage/SKILL.md
-  site: https://aiseotracker.com
-  docs: https://aiseotracker.com/docs/content-coverage
-  mcp: https://aiseotracker.com/api/agent/mcp
-  setup: https://aiseotracker.com/SKILL.md
-  report: https://aiseotracker.com/ai-seo-report/SKILL.md
+  version: 1.1.0
+  based_on: aiseotracker content-coverage (paid MCP removed)
 ---
 
-# AI SEO content coverage
+# AI search content coverage
 
-**Start here:** You are reading `https://aiseotracker.com/content-coverage/SKILL.md`. The file is complete only if the **last line** is page end `END SKILL v1.0.0`. If missing, re-fetch.
+Cover **approved question clusters** with evidence-backed pages in the user's content repository. Then re-check the questions after those pages are live. Do not promise full coverage or rankings.
 
-Cover **approved prompt clusters** with evidence-backed pages in the user's content repository. Then recheck MCP after those pages are live. Do not promise full coverage or rankings.
+## Inputs
 
-## If MCP is not connected
-
-Fetch `https://aiseotracker.com/SKILL.md` and connect MCP first (OAuth, no API keys). Then come back to this file.
-
-MCP URL: `https://aiseotracker.com/api/agent/mcp`
-
-Prerequisites:
-
-- Connected AI SEO Tracker MCP
-- A writable content repository (blog MDX/markdown)
+- `seo/ai-questions.md` and `seo/ai-answers.csv` from the `ai-answer-check` skill (run it first if they are missing or older than 7 days)
+- A writable content repository
 - Optional: a project image skill or tool the user already has
-
-Do not call `aiseo_add_prompts` from this skill unless the user explicitly asks to track more queries.
-
-## Call order (do not skip)
-
-1. `aiseo_list_projects`: pick the project the user named (domain or slug). Never invent a slug.
-2. `aiseo_get_scan`: if `dataStatus` is `no_data`, stop. Say the project needs a scan. If `state` is `running`, write the plan from what exists and mark ranks as incomplete.
-3. `aiseo_list_prompts`: all prompts (no status filter). Keep `summary` and `prompts[].href`. Missing prompts are the coverage queue.
-4. `aiseo_list_sources`: citation URLs and domains. Use `sources[].href` and `sources[].url`.
-5. `aiseo_list_competitors`: prefer `status=TRACKED`. Use `competitors[].href`.
-6. `aiseo_list_snippets`: own brand. Optional: one tracked competitor if that rival leads the cited answers.
-
-Use `href` fields. Prefix with `https://aiseotracker.com`. Do not invent paths, ranks, or competitor names.
 
 ## Phase 1: Snapshot
 
-Fill this block from tool JSON only:
+Fill this block from the log only:
 
 ```
 CONTENT PLAN:
-Brand: "<project.name>"
-Domain: <project.domain or null>
-Project: <project.slug>
-Snapshot: <get_scan.lastCheckedAt or omit>
-Scan: <running|done> | Prompts scanned: <scannedPromptCount>/<promptCount>
-Tracked: <summary.total> | Missing: <summary.missing> | Winning: <summary.winning> | Opportunities: <summary.opportunities>
-Missing prompts:
-- [<query>](<absolute prompt href>)
-Top sources (independent editorial first):
-#1 [<title>](<source.url>) · <domain> · <mentionCount> mentions · prompts: <list>
-Tracked competitors:
-- [<brandName>](<absolute competitor href>) (<domain or none>)
+Brand: <name>   Domain: <domain>
+Log window: <first date> - <last date>  (Claude with web search; proxy for Bing/Google-fed engines)
+Questions: <N> | Brand named: <n> | Missing: <m>
+Missing questions:
+- <qid> <question>
+Top cited sources (independent editorial first):
+#1 <url> · <type> · cited on <k> questions
+Competitors named most:
+- <name> (<count>)
 ```
 
-Separate **independent editorial listicles** (third-party roundups) from **competitor-owned pages** (vendor blogs and homepages). Pitch only independent lists later.
+Separate **independent editorial listicles** (third-party roundups) from **competitor-owned pages**. Pitch only independent lists later.
 
 ## Phase 2: Cluster and canonicalize
 
@@ -90,9 +53,9 @@ Cap a batch at **5 posts**. If more clusters remain, queue them for the next app
 
 For each approved or proposed slug:
 
-1. Start from MCP `sources[].url` for that prompt cluster.
+1. Start from the `cited_urls` logged for that question cluster.
 2. Fetch 3–5 verified URLs. Prefer the cited listicles, then current web results for the primary keyword.
-3. Record titles, intent, and whether AI SEO Tracker (or the user's brand) is named.
+3. Record titles, intent, and whether the user's brand is named.
 4. If a URL does not resolve, write `unverified` and skip it. Never invent a listicle URL.
 5. Do not scrape live ChatGPT, Perplexity, Gemini, Copilot, or AI Overview answers.
 
@@ -122,9 +85,8 @@ Keep this manifest in the chat (or a file the user named). Update it as you go. 
 
 ```
 CONTENT BATCH MANIFEST v1
-Project: <slug>
 Planned at: <ISO date>
-MCP snapshot: <lastCheckedAt>
+Log snapshot: <last date in ai-answers.csv>
 Phase: <snapshot|plan|research|draft|validate|report>
 
 | slug | action | prompt cluster | phase | notes |
@@ -134,7 +96,7 @@ Phase: <snapshot|plan|research|draft|validate|report>
 phase values: planned | research | draft | validate | done | blocked
 ```
 
-On resume: re-run Phase 1 if `lastCheckedAt` changed or the user says data changed. Skip rows at `done`. Read existing files before merging a `blocked` or partial slug.
+On resume: re-run Phase 1 if the log has new rows or the user says data changed. Skip rows at `done`. Read existing files before merging a `blocked` or partial slug.
 
 ## Phase 5: Write (after approval)
 
@@ -154,7 +116,7 @@ Images:
 2. Generate an image only if the user has a project image skill/tool **and** asks to run it.
 3. Never print API keys. Never tell the user to paste keys. Never call a private operator script from this skill.
 
-Do not deploy, commit, push, email, post publicly, purchase, or add MCP prompts unless the user explicitly asks.
+Do not deploy, commit, push, email, post publicly, or purchase unless the user explicitly asks.
 
 ## Phase 6: Validate
 
@@ -169,22 +131,16 @@ Before you hand off a batch:
 
 ## Phase 7: After publication
 
-When the user says the posts are live:
+When the user says the pages are live:
 
-1. Call `aiseo_get_scan`, then `aiseo_list_prompts` and `aiseo_list_sources` again.
-2. Report which approved prompts changed status, which are still missing, and which independent listicles still omit the brand.
+1. Re-run `ai-answer-check` for the questions in this batch.
+2. Report which questions changed (brand now named or not), and which independent listicles still omit the brand.
 3. Leave outreach as copy-paste drafts. Do not send.
-
-Optional: fetch `https://aiseotracker.com/ai-seo-report/SKILL.md` for the visibility brief after the rescan.
 
 ## Do not
 
 - Invent ranks, URLs, competitor names, listicle domains, DR, traffic, or trend deltas
-- Treat `dataStatus: no_data` as an auth failure
-- Scrape live AI answers or the marketing site when MCP is empty
 - Write files before the approval checkpoint
 - Promise rankings or "full coverage"
-- Send email, post publicly, or charge a card
-- Call `aiseo_add_prompts` unless the user asked to track those queries
+- Send email, post publicly, pay for placements, or charge a card
 
-END SKILL v1.0.0

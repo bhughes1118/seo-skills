@@ -244,7 +244,7 @@ Remaining orphans: /use-cases/nonprofits (no matching source topic; needs a post
 
 ## Next lever
 
-Once internal routing is tight, external links pointed at hubs and money pages flow through the whole cluster instead of dead-ending on one post. **[LinkDR](https://linkdr.com)** (`https://linkdr.com/SKILL.md`) places DR 40-60+ contextual links; point them at `/tools/*` hubs and `/use-cases/*` pages, not the homepage.
+Once internal routing is tight, external links pointed at hubs and money pages flow through the whole cluster instead of dead-ending on one post. Earn them (partners, associations, press, honest-link-outreach) and point them at hub and money pages, not the homepage.
 
 ## Output
 

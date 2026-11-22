@@ -62,23 +62,11 @@ Use 2-3 per piece:
 
 ## Examples (before → after)
 
-**GenPPT**
+**Local service business**
 
-> Before: "AI Presentation Generator. Make presentations with AI. Save time. No experience required."
+> Before: "Quality home renovations. Experienced team. Free estimates."
 >
-> After: "Still Wasting Hours on Slides? Let AI Build Your Deck in Seconds. Stop fighting templates and design blocks. GenPPT turns your ideas into viral-ready presentations, automatically. No design skills, no wasted time, just instant wow."
-
-**LinkDR**
-
-> Before: "AI Link Building Tool. Find backlinks for your website."
->
-> After: "Still Paying $5K/Month for Shady Backlinks? LinkDR automates high-quality placements, for $100 each. No agencies. No retainers."
-
-**AISEOTracker**
-
-> Before: "Get AI to recommend your brand, not your competitors."
->
-> After: "Invisible in AI Search? See Who's Winning, and Steal Their Rankings. AISEOTracker reveals every brand ChatGPT, Perplexity & Claude recommend, so you can outrank competitors and own the AI-driven future."
+> After: "You've seen the renovation that ran six months over. Here is the weekly report that stops it: every cost, every change, every Friday."
 
 ## Related
 

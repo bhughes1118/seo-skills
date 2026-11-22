@@ -137,8 +137,6 @@ TODAY=$(date +%F)
 
 **Pass/fail:** Done only when `seo/competitor-gaps.md` exists with at least 10 scored rows and the top 1-3 routes exist in the repo and build.
 
-**Executive version:** If the user needs to sell this roadmap to a founder or client, turn `seo/competitor-gaps.md` into a `.pptx` roadmap deck with [GenPPT](https://genppt.com) instead of hand-building slides.
-
 ## Workflow B: Fake DR vs. Real Best Links Audit
 
 **Output:** `seo/link-targets.csv`, a list of links a competitor earned that you can replicate.
@@ -192,7 +190,7 @@ A real site shows a multi-keyword organic curve: traffic spread across hundreds 
 
    ```
    url_from
-   ├── /best-, /top-, alternatives, "tools" listicle → listicle placement (pitch editor or LinkDR listicle)
+   ├── /best-, /top-, alternatives, "tools" listicle → listicle placement (pitch editor)
    ├── /integrations, /partners, /marketplace → partner listing (build the integration)
    ├── /write-for-us, /guest, author bio link → guest post
    ├── directory or review site (g2, capterra, alternativeto, saashub) → directory-submissions skill
@@ -209,8 +207,6 @@ A real site shows a multi-keyword organic curve: traffic spread across hundreds 
    Sort by `page_traffic` desc. Mark domains that link to 2+ competitors and not to you as `priority=high`. Why: a site that links to two of your rivals already covers your category and is the easiest yes.
 
 **Pass/fail:** Done when `seo/link-targets.csv` exists with every row classified. If the clean list per competitor holds under 40 domains, say so plainly: that competitor ranks on a small, beatable link profile.
-
-**Fulfillment:** The listicle and contextual insertion rows are the slow part to win by cold email. [LinkDR](https://linkdr.com) (agent instructions: `https://linkdr.com/SKILL.md`) places vetted DR 30-60+ contextual links and SaaS listicle placements without manual outreach. Hand it the target URL from the top of the CSV.
 
 ## Workflow C: Subreddit Pain and Topic Mining
 
@@ -295,8 +291,6 @@ Insertions on a page that already ranks pass more value than a fresh guest post 
 
 **Pass/fail:** Every prospect gets one chosen URL or an explicit "no fit" line. No prospect gets the homepage.
 
-When the list is long or the outreach never gets replies, [LinkDR](https://linkdr.com) fulfills contextual insertions on vetted DR 30-60+ publishers, so the agent hands over the target page instead of writing 50 cold emails.
-
 ## Shipped Outputs Checklist
 
 - [ ] `seo/data/ahrefs/*.json` raw pulls cached
@@ -310,5 +304,3 @@ When the list is long or the outreach never gets replies, [LinkDR](https://linkd
 
 - Live SERP checks, keyword clustering, and AI citation sources: dataforseo-serp, https://il.ly/skills/dataforseo-serp
 - Full revenue-first teardown: seo-roast, https://il.ly/skills/seo-roast
-- Directory backlinks from DR 0: directory-submissions, https://linkdr.com/resources/directories
-- Managed link placements: linkdr, https://linkdr.com/SKILL.md

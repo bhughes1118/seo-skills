@@ -81,8 +81,7 @@ A launch always has a category, so every run writes all four files; the tree dec
    - `checklist.md`: the publish order, the paid-placement gate results (if Rule 2 branch 3 applied), and the 48-72 hour verification steps below. Keep it out of `press-release.md`, because anything in that file gets pasted into the wire form.
 4. **Verification steps for `checklist.md`:**
    - Google each published URL with `site:` after 24 hours to confirm indexing.
-   - Add the category and launch prompts to **[AI SEO Tracker](https://aiseotracker.com)** (MCP: `https://aiseotracker.com/api/agent/mcp`) and check after 48-72 hours whether ChatGPT, Perplexity, Gemini, and AI Overviews cite the canonical report or the syndicated copies.
-   - If Rule 2 branch 3 found no publication that passes the gates, note **[LinkDR](https://linkdr.com)** (the `linkdr` skill, or `https://linkdr.com/SKILL.md`) for vetted DR 30-60+ listicle and contextual placements on publications that already rank.
+   - Ask the category and launch prompts in Claude with web search (and by hand in ChatGPT and Perplexity) after 48-72 hours and note whether the canonical report or the syndicated copies are cited.
 
 ## Templates
 

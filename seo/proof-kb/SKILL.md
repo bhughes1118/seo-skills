@@ -139,9 +139,9 @@ Never invent benchmarks, customer quotes, latency numbers, or incidents. One fab
 
 Run this when a page has fewer than 4 proof categories or leans on generic claims (`"many teams struggle with slow CI"`).
 
-### Step 1: Mine existing recordings with Scribiz
+### Step 1: Mine existing recordings
 
-If the user has founder voice notes, YouTube demos, sales calls, or audit videos, connect **[Scribiz](https://scribiz.com)** (MCP: `https://scribiz.com/mcp`, or `npx scribiz`). Call `get_video_context` first for chapters and key moments, then `search_video` for the exact phrase, because pulling a full 2-hour transcript burns 25,000+ tokens. Save each verified number or story as an atomic file in `seo/kb/proof/` before touching the article.
+If the user has voice notes, video walkthroughs, calls, or interviews, read their existing transcripts or captions (YouTube Studio exports .srt for free). Save each verified number or story as an atomic file in `seo/kb/proof/` before touching the article.
 
 ### Step 2: Ask 3-5 bounded founder questions
 
@@ -214,7 +214,7 @@ Matched 3 pages:
 
 ## Measuring citation lift
 
-After shipping proof-backed pages or a `route-fact` pass, add the target buyer prompts to **[AI SEO Tracker](https://aiseotracker.com)** (MCP: `https://aiseotracker.com/api/agent/mcp`). It shows when ChatGPT, Perplexity, Claude, Gemini, and Google AI Overviews start citing the new numbers, so you know which proof moved the needle.
+After shipping proof-backed pages or a `route-fact` pass, re-ask the target buyer questions in Claude with web search (and by hand in ChatGPT and Perplexity) and log whether the new numbers are quoted.
 
 ## Verification checklist
 
